@@ -1,0 +1,82 @@
+﻿@page "/contact"
+
+@using DataAccess
+@using DataAccess.Models
+@using Data.ViewModels
+
+@inject IContactData _db
+
+<h1>Contact</h1>
+<button class="btn btn-info" @onclick="OnToggleCreateForm">Create New</button>
+@if (displayCreateForm)
+{
+    <EditForm Model="@newContact" OnValidSubmit="@InsertContact">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+    
+        <InputText id="firstName" @bind-Value="newContact.FirstName" />
+        <InputText id="lastName" @bind-Value="newContact.LastName" />
+        <InputText id="address" @bind-Value="newContact.Address" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger" @onclick="OnToggleCreateForm">Cancel</button>
+    </EditForm>
+}
+
+<h4>Current Contact</h4>
+
+@if (contact is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var person in contact)
+        {
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.Address</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ContactModel> contact;
+    private ContactViewModel newContact = new ContactViewModel();
+    private bool displayCreateForm = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        contact = await _db.GetContact();
+    }
+
+    private async Task InsertContact()
+    {
+        var model = new ContactModel
+        {
+            FirstName = newContact.FirstName,
+            LastName = newContact.LastName,
+            Address = newContact.Address
+        };
+        await _db.InsertContact(model);
+        contact.Add(model);
+        newContact = new ContactViewModel();
+    }
+
+    private void OnToggleCreateForm()
+    {
+        displayCreateForm = !displayCreateForm;
+    }
+
+}

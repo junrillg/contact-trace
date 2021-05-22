@@ -1,0 +1,9 @@
+D:\Personal\ContactTrace\ContactTrace.DataAccess\bin\Debug\netcoreapp3.1\ContactTrace.DataAccess.deps.json
+D:\Personal\ContactTrace\ContactTrace.DataAccess\bin\Debug\netcoreapp3.1\ContactTrace.DataAccess.dll
+D:\Personal\ContactTrace\ContactTrace.DataAccess\bin\Debug\netcoreapp3.1\ContactTrace.DataAccess.pdb
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.csprojAssemblyReference.cache
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.csproj.CoreCompileInputs.cache
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.AssemblyInfoInputs.cache
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.AssemblyInfo.cs
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.dll
+D:\Personal\ContactTrace\ContactTrace.DataAccess\obj\Debug\netcoreapp3.1\ContactTrace.DataAccess.pdb
